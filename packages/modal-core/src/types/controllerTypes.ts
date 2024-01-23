@@ -1,3 +1,13 @@
+declare global {
+  interface Window {
+    Telegram: {
+      WebApp: {
+        openLink(href: string): void;
+      };
+    };
+  }
+}
+
 export interface MobileWallet {
   id: string
   name: string
