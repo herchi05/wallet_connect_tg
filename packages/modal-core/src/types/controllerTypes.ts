@@ -8,6 +8,14 @@ declare global {
   }
 }
 
+declare global {
+  var Telegram: {
+    WebApp: {
+      openLink(href: string): void;
+    };
+  };
+}
+
 export interface MobileWallet {
   id: string
   name: string

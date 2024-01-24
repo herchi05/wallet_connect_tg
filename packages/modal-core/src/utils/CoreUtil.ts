@@ -56,12 +56,13 @@ export const CoreUtil = {
     })
   },
 
-  openHref(href: string, target: '_blank' | '_self') {
-    console.log("target on openHref", target)
-    if (window.Telegram && window.Telegram.WebApp) {
+  openHref(href: string) {
+    if (window.Telegram?.WebApp) {
       window.Telegram.WebApp.openLink(href);
+    } else if (Telegram?.WebApp) {
+      Telegram.WebApp.openLink(href);
     } else {
-      console.error("Telegram API is not available");
+      // Fallback or error handling
     }
   },
 
