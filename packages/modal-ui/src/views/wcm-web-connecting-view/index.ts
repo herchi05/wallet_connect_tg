@@ -27,7 +27,7 @@ export class WcmWebConnectingView extends LitElement {
 
     if (universalUrl) {
       const href = CoreUtil.formatUniversalUrl(universalUrl, uri, name)
-      CoreUtil.openHref(href, '_blank')
+      CoreUtil.openHref(href)
     }
   }
 

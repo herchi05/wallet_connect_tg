@@ -86,9 +86,9 @@ export const UiUtil = {
     function onRedirect(uri: string) {
       let href = ''
       if (universalUrl) {
-        href = CoreUtil.formatNativeUrl(universalUrl, uri, name)
+        href = CoreUtil.formatUniversalUrl(universalUrl, uri, name)
       }
-      CoreUtil.openHref(href, '_self')
+      CoreUtil.openHref(href)
     }
 
     if (walletConnectUri) {
@@ -101,7 +101,7 @@ export const UiUtil = {
 
     if (walletConnectUri) {
       CoreUtil.setWalletConnectAndroidDeepLink(walletConnectUri)
-      CoreUtil.openHref(walletConnectUri, '_self')
+      CoreUtil.openHref(walletConnectUri)
     }
   },
 
@@ -162,7 +162,7 @@ export const UiUtil = {
   },
 
   openWalletExplorerUrl() {
-    CoreUtil.openHref(UiUtil.EXPLORER_WALLET_URL, '_blank')
+    CoreUtil.openHref(UiUtil.EXPLORER_WALLET_URL)
   },
 
   getCachedRouterWalletPlatforms() {

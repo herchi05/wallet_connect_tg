@@ -24,11 +24,11 @@ export class WcmDesktopConnectingView extends LitElement {
 
   private onFormatAndRedirect(uri: string) {
     const { desktop, name } = CoreUtil.getWalletRouterData()
-    const nativeUrl = desktop?.native
+    const universalUrl = desktop?.universal
 
-    if (nativeUrl) {
-      const href = CoreUtil.formatNativeUrl(nativeUrl, uri, name)
-      CoreUtil.openHref(href, '_self')
+    if (universalUrl) {
+      const href = CoreUtil.formatUniversalUrl(universalUrl, uri, name)
+      CoreUtil.openHref(href)
     }
   }
 

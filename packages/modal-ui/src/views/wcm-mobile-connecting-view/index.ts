@@ -22,32 +22,28 @@ export class WcmMobileConnectingView extends LitElement {
 
   // -- private ------------------------------------------------------ //
 
-  private onFormatAndRedirect(uri: string, forceUniversalUrl = false) {
-    const { mobile, name } = CoreUtil.getWalletRouterData()
-    const nativeUrl = mobile?.native
-    const universalUrl = mobile?.universal
+  private onFormatAndRedirect(uri: string) {
+    const { mobile, name } = CoreUtil.getWalletRouterData();
+    const universalUrl = mobile?.universal;
 
-    if (nativeUrl && !forceUniversalUrl) {
-      const href = CoreUtil.formatNativeUrl(nativeUrl, uri, name)
-      CoreUtil.openHref(href, '_self')
-    } else if (universalUrl) {
-      const href = CoreUtil.formatUniversalUrl(universalUrl, uri, name)
-      CoreUtil.openHref(href, '_self')
+    if (universalUrl) {
+      const href = CoreUtil.formatUniversalUrl(universalUrl, uri, name);
+      CoreUtil.openHref(href);
     }
   }
 
-  private openMobileApp(forceUniversalUrl = false) {
-    const { walletConnectUri } = OptionsCtrl.state
-    const routerData = CoreUtil.getWalletRouterData()
-    UiUtil.setRecentWallet(routerData)
+  private openMobileApp() {
+    const { walletConnectUri } = OptionsCtrl.state;
+    const routerData = CoreUtil.getWalletRouterData();
+    UiUtil.setRecentWallet(routerData);
     if (walletConnectUri) {
-      this.onFormatAndRedirect(walletConnectUri, forceUniversalUrl)
+      this.onFormatAndRedirect(walletConnectUri);
     }
   }
 
   private onGoToAppStore(downloadUrl?: string) {
     if (downloadUrl) {
-      CoreUtil.openHref(downloadUrl, '_blank')
+      CoreUtil.openHref(downloadUrl)
     }
   }
 
@@ -72,7 +68,7 @@ export class WcmMobileConnectingView extends LitElement {
 
       <wcm-info-footer class="wcm-note">
         <wcm-platform-selection .isWeb=${isWeb} .isRetry=${true}>
-          <wcm-button .onClick=${() => this.openMobileApp(false)} .iconRight=${SvgUtil.RETRY_ICON}>
+          <wcm-button .onClick=${() => this.openMobileApp()} .iconRight=${SvgUtil.RETRY_ICON}>
             Retry
           </wcm-button>
         </wcm-platform-selection>
@@ -81,7 +77,7 @@ export class WcmMobileConnectingView extends LitElement {
           ? html`
               <wcm-text color="secondary" variant="small-thin">
                 Still doesn't work?
-                <span tabindex="0" @click=${() => this.openMobileApp(true)}>
+                <span tabindex="0" @click=${() => this.openMobileApp()}>
                   Try this alternate link
                 </span>
               </wcm-text>

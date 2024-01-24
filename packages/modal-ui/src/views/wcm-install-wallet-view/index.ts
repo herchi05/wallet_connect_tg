@@ -14,7 +14,7 @@ export class WcmInstallWalletView extends LitElement {
 
   private onInstall(uri?: string) {
     if (uri) {
-      CoreUtil.openHref(uri, '_blank')
+      CoreUtil.openHref(uri)
     }
   }
 
