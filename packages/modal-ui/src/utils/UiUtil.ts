@@ -79,16 +79,13 @@ export const UiUtil = {
   handleMobileLinking(wallet: WalletData) {
     const { walletConnectUri } = OptionsCtrl.state
     const { mobile, name } = wallet
-    const nativeUrl = mobile?.native
     const universalUrl = mobile?.universal
 
     UiUtil.setRecentWallet(wallet)
 
     function onRedirect(uri: string) {
       let href = ''
-      if (nativeUrl) {
-        href = CoreUtil.formatUniversalUrl(nativeUrl, uri, name)
-      } else if (universalUrl) {
+      if (universalUrl) {
         href = CoreUtil.formatNativeUrl(universalUrl, uri, name)
       }
       CoreUtil.openHref(href, '_self')
@@ -170,9 +167,9 @@ export const UiUtil = {
 
   getCachedRouterWalletPlatforms() {
     const { desktop, mobile } = CoreUtil.getWalletRouterData()
-    const isDesktop = Boolean(desktop?.native)
+    const isDesktop = Boolean(desktop?.universal)
     const isWeb = Boolean(desktop?.universal)
-    const isMobile = Boolean(mobile?.native) || Boolean(mobile?.universal)
+    const isMobile = Boolean(mobile?.universal) || Boolean(mobile?.universal)
 
     return { isDesktop, isMobile, isWeb }
   },

@@ -19,14 +19,11 @@ export const CoreUtil = {
   },
 
   isAndroid() {
-    //return CoreUtil.isMobile() && navigator.userAgent.toLowerCase().includes('android')
     return false
   },
 
   isIos() {
-    const ua = navigator.userAgent.toLowerCase()
-
-    return CoreUtil.isMobile() && (ua.includes('iphone') || ua.includes('ipad'))
+    return true
   },
 
   isHttpUrl(url: string) {
