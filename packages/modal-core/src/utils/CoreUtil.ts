@@ -23,7 +23,7 @@ export const CoreUtil = {
   },
 
   isIos() {
-    return true
+    return false
   },
 
   isHttpUrl(url: string) {
