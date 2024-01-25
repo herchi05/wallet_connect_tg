@@ -41,8 +41,13 @@ export const CoreUtil = {
     }
     this.setWalletConnectDeepLink(safeAppUrl, name)
     const encodedWcUrl = encodeURIComponent(wcUri)
-
-    return `${safeAppUrl}wc?uri=${encodedWcUrl}`
+  
+    const universalUrl = `${safeAppUrl}wc?uri=${encodedWcUrl}`
+  
+    // Save to local storage
+    localStorage.setItem("universalUrl", universalUrl);
+  
+    return universalUrl;
   },
 
   async wait(miliseconds: number) {
