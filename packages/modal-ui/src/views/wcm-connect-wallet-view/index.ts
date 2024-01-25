@@ -9,9 +9,9 @@ export class WcmConnectWalletView extends LitElement {
 
   // -- private ------------------------------------------------------ //
   private viewTemplate() {
-    if (CoreUtil.isAndroid()) {
-      return html`<wcm-android-wallet-selection></wcm-android-wallet-selection>`
-    }
+    // if (CoreUtil.isAndroid()) {
+    //   return html`<wcm-android-wallet-selection></wcm-android-wallet-selection>`
+    // }
 
     if (CoreUtil.isMobile()) {
       return html`<wcm-mobile-wallet-selection></wcm-mobile-wallet-selection>`

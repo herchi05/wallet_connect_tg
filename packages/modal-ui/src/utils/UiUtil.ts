@@ -169,7 +169,7 @@ export const UiUtil = {
     const { desktop, mobile } = CoreUtil.getWalletRouterData()
     const isDesktop = Boolean(desktop?.universal)
     const isWeb = Boolean(desktop?.universal)
-    const isMobile = Boolean(mobile?.universal) || Boolean(mobile?.universal)
+    const isMobile = Boolean(mobile?.universal)
 
     return { isDesktop, isMobile, isWeb }
   },
