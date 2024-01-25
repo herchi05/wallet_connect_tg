@@ -34,11 +34,6 @@ export const CoreUtil = {
     return Array.isArray(data) && data.length > 0
   },
 
-  formatNativeUrl(appUrl: string, wcUri: string, name: string): string {
-    // Directly use formatUniversalUrl for all cases
-    return this.formatUniversalUrl(appUrl, wcUri, name);
-  },
-
   formatUniversalUrl(appUrl: string, wcUri: string, name: string): string {
     let safeAppUrl = appUrl
     if (!safeAppUrl.endsWith('/')) {
