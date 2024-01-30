@@ -40,7 +40,7 @@ button {
   height: 28px;
   border-radius: var(--wcm-icon-button-border-radius);
   border: none;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   cursor: pointer;

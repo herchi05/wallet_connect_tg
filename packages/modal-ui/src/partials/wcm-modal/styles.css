@@ -36,8 +36,7 @@
   max-width: 360px;
   width: 100%;
   outline: none;
-  border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius)
-    var(--wcm-container-border-radius) var(--wcm-container-border-radius);
+  border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) var(--wcm-container-border-radius) var(--wcm-container-border-radius);
   border: 1px solid var(--wcm-color-overlay);
   overflow: hidden;
 }
@@ -58,7 +57,7 @@
 @media (max-width: 600px) {
   .wcm-container {
     max-width: 440px;
-    border-radius: var(--wcm-background-border-radius) var(--wcm-background-border-radius) 0 0;
+    border-radius: 20px;
   }
 
   .wcm-card {
